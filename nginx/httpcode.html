@@ -76,7 +76,7 @@
                                     Connection refused <br/>
                                     Connection timed out <br/>
                                     Server actually returns 000 for some reason <br/>
-                                    总结一句话：就是发生错误时，nginx找不到对应的httpcode码，于是默认赋值000
+                                    <span style="font-weight: bold;color: red;">总结一句话：就是发生错误时，nginx找不到对应的httpcode码，于是默认赋值000</span>
                                 </p>
                                 <h2>---------------------------------------------------------------------------------------------</h2>
                                 <h2>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</h2>
@@ -103,6 +103,19 @@
                                 <h2>406 （不接受） 无法使用请求的内容特性响应请求的网页。</h2>
                                 <h2>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。</h2>
                                 <h2>408 （请求超时） 服务器等候请求时发生超时。</h2>
+                                <p>
+                                    <span style="font-weight: bold;">client_header_timeout</span> <br/> <br/>
+                                    语法 client_header_timeout time <br/>
+                                    默认值 60s <br/>
+                                    上下文 http server <br/>
+                                    说明 指定等待client发送一个请求头的超时时间（例如：GET / HTTP/1.1）.仅当在一次read中，没有收到请求头，才会算成超时。如果在超时时间内，client没发送任何东西，nginx返回HTTP状态码408(“Request timed out”) <br/>
+                                    <br/><br/>
+                                    <span style="font-weight: bold;">client_body_timeout</span> <br/> <br/>
+                                    语法 client_body_timeout time <br/>
+                                    默认值 60s <br/>
+                                    上下文 http server location <br/>
+                                    说明 该指令设置请求体（request body）的读超时时间。仅当在一次readstep中，没有得到请求体，就会设为超时。超时后，nginx返回HTTP状态码408(“Request timed out”) <br/>
+                                </p>
                                 <h2>409 （冲突） 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。</h2>
                                 <h2>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。</h2>
                                 <h2>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。</h2>
