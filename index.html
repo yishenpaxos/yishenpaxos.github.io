@@ -23,13 +23,39 @@
             background: linear-gradient(200deg,#a0cfe4,#e8c37e);
         }
     </style>
+    <script type="text/javascript" src="jquery.js" />
+    <script type="text/javascript">
+        $(function(){
+            $.ajax({
+                type: "get",
+                async: true, //同步执行
+                url: "menu.html?t="+new Date().getTime(),
+                dataType: "html", //返回数据形式为json
+                success: function (result) {
+                    $(".header-menu").html(result);
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div id="container" q-class="show:isCtnShow">
         <canvas id="anm-canvas" class="anm-canvas"></canvas>
         <div class="left-col" q-class="show:isShow">
-            <iframe name="content_iframe" marginwidth=0 marginheight=0 width=100% height=100% src="menu.html" frameborder=0></iframe>
+            <div class="overlay" style="background: #4d4d4d"></div>
+            <div class="intrude-less">
+                <header id="header" class="inner">
+                    <a href="/" class="profilepic">
+                        <img src="https://avatars0.githubusercontent.com/u/3191707?v=3&u=5fdd07e91e52fbd9a1c26fad62a2ca7a23d44b2f&s=400" class="js-avatar">
+                    </a>
+                    <hgroup>
+                        <h1 class="header-author"><a href="/">Paxos Yishen</a></h1>
+                    </hgroup>
+                    <nav class="header-menu">
+                    </nav>
+                </header>
+            </div>
         </div>
         <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
             <div id="wrapper" class="body-wrap">
