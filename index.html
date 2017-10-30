@@ -23,7 +23,6 @@
             background: linear-gradient(200deg,#a0cfe4,#e8c37e);
         }
     </style>
-    <script type="text/javascript" src="/./jquery.js" />
 </head>
 
 <body>
@@ -40,6 +39,11 @@
                         <h1 class="header-author"><a href="/">Paxos Yishen</a></h1>
                     </hgroup>
                     <nav class="header-menu">
+                        <ul>
+                            <li><a href="/">主页</a></li>
+                            <li><a href="/nginx/httpcode.html">Nginx状态码整理</a></li>
+                            <li><a href="/java/jvm.html">JAVA-JVM学习</a></li>
+                        </ul>
                     </nav>
                 </header>
             </div>
@@ -110,17 +114,5 @@
             </footer>
         </div>
     </div>
-    <script type="text/javascript">
-        $(function(){
-            $.ajax({
-                type: "get",
-                url: "https://yishenpaxos.github.io/menu.html",
-                dataType: "html", //返回数据形式为json
-                success: function (result) {
-                    $(".header-menu").html(result);
-                }
-            });
-        });
-    </script>
 </body>
 </html>
