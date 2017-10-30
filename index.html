@@ -23,13 +23,13 @@
             background: linear-gradient(200deg,#a0cfe4,#e8c37e);
         }
     </style>
-    <script type="text/javascript" src="jquery.js" />
+    <script type="text/javascript" src="/./jquery.js" />
     <script type="text/javascript">
         $(function(){
             $.ajax({
                 type: "get",
                 async: true, //同步执行
-                url: "https://yishenpaxos.github.io/menu.html?t="+new Date().getTime(),
+                url: "/./menu.html?t="+new Date().getTime(),
                 dataType: "html", //返回数据形式为json
                 success: function (result) {
                     $(".header-menu").html(result);
