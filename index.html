@@ -29,7 +29,7 @@
             $.ajax({
                 type: "get",
                 async: true, //同步执行
-                url: "menu.html?t="+new Date().getTime(),
+                url: "https://yishenpaxos.github.io/menu.html?t="+new Date().getTime(),
                 dataType: "html", //返回数据形式为json
                 success: function (result) {
                     $(".header-menu").html(result);
