@@ -24,19 +24,6 @@
         }
     </style>
     <script type="text/javascript" src="/./jquery.js" />
-    <script type="text/javascript">
-        $(function(){
-            $.ajax({
-                type: "get",
-                async: true, //同步执行
-                url: "/./menu.html?t="+new Date().getTime(),
-                dataType: "html", //返回数据形式为json
-                success: function (result) {
-                    $(".header-menu").html(result);
-                }
-            });
-        });
-    </script>
 </head>
 
 <body>
@@ -123,5 +110,17 @@
             </footer>
         </div>
     </div>
+    <script type="text/javascript">
+        $(function(){
+            $.ajax({
+                type: "get",
+                url: "https://yishenpaxos.github.io/menu.html",
+                dataType: "html", //返回数据形式为json
+                success: function (result) {
+                    $(".header-menu").html(result);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
